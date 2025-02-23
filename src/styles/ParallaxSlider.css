@@ -1,0 +1,46 @@
+.parallax-slider-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide-background {
+    position: absolute;
+    top: -50vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
+}
+
+.slick-slide {
+    position: relative;
+    height: 100vh;
+}
+
+.slick-dots {
+    bottom: 20px;
+}
+
+.slick-dots li button:before {
+    color: white;
+}
+
+.slick-dots li.slick-active button:before {
+    color: white;
+}
