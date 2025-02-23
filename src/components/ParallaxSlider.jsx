@@ -1,21 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './ParallaxSlider.css'; // Подключаем стили
-import imageOne from './1.png'
-import imageTwo from './2.jpg'
-import imageThree from './3.jpg'
-const ParallaxSlider = ({offset}) => {
+import '../styles/ParallaxSlider.css';
+import imageOne from '../assets/1.avif'
+import imageTwo from '../assets/2.avif'
+import imageThree from '../assets/3.avif'
+import LazyLoad from 'react-lazyload';
+
+const ParallaxSlider = () => {
+
+    const [offset, setOffset] = useState(0);
+
+    const handleScroll = () => {
+        setOffset(window.scrollY);
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [handleScroll]);
 
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 2500,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 3500,
+        lazyLoad: true,
+        pauseOnHover: false
+
     };
 
     const slides = [
@@ -37,10 +54,11 @@ const ParallaxSlider = ({offset}) => {
     ];
 
     return (
-        <div className="parallax-slider-container">
+        <section id='Slider' className="parallax-slider-container">
             <Slider {...settings}>
                 {slides.map((slide, index) => (
-                    <div key={index}>
+                    <LazyLoad key={index} height={100} offset={100}>
+
                         <div
                             className="slide-background"
                             style={{
@@ -52,10 +70,11 @@ const ParallaxSlider = ({offset}) => {
                             <h3>{slide.title}</h3>
                             <p>{slide.description}</p>
                         </div>
-                    </div>
+
+                    </LazyLoad>
                 ))}
             </Slider>
-        </div>
+        </section>
     );
 };
 

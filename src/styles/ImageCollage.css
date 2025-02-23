@@ -1,0 +1,90 @@
+.ImageCollage {
+    text-align: center;
+    background-color: #282c32;
+    padding: 10vh;
+}
+
+.ImageCollage-h {
+    padding: 5vh 0;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 667px) {
+    .ImageCollage {
+        padding: 0;
+    }
+
+    .container {
+        padding: 10vh 0;
+    }
+
+}
+
+.main-photo {
+    display: flex;
+    align-items: center;
+}
+
+.main-photo img {
+    max-width: 50vw;
+    max-height: 70vh;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.thumbnail {
+    width: 12vw;
+    height: auto;
+    cursor: pointer;
+
+}
+
+@media only screen and (max-width: 667px) {
+    .thumbnail {
+        width: 20vw;
+    }
+
+    .main-photo img {
+        max-width: 35vw;
+        max-height: 40vh;
+    }
+
+}
+
+.thumbnails-item {
+    filter: brightness(40%);
+    transition: 0.8s;
+}
+
+.thumbnails-item:hover {
+    transition: 0.8s;
+    filter: brightness(100%);
+}
+
+.thumbnail.selected {
+    border-color: #000;
+}
+
+.thumbnails-item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.thumbnails-item h3 {
+    cursor: pointer;
+    top: 45%;
+    position: absolute;
+    color: #ffffff;
+    font-size: calc(1vh + 1vw);
+}
