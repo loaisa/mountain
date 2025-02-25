@@ -14,3 +14,31 @@ h3 {
 p {
     font-size: calc(1vh + 1vw)
 }
+.loader{
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    background: #5b5b5b;
+    text-shadow: 0 0 1px #000000;
+
+}
+.loader:before {
+    animation: smokeOut 1s ease-in-out infinite alternate;
+    content: "Loading";
+}
+
+@keyframes smokeOut {
+    100% {
+        opacity: 0.08;
+        filter: blur(5px);
+        letter-spacing: 4px;
+    }
+}

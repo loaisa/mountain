@@ -74,7 +74,7 @@ form{
     border: none;
     background: #cecece;
     transition: .5s;
-    font-size: calc(1vw + 1vh);
+    font-size: calc(0.8vw + 0.8vh);
 }
 .button-form:hover{
     background-color: #969696;

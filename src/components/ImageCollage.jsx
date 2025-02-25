@@ -31,7 +31,15 @@ const ImageCollage = () => {
             <h3 className='ImageCollage-h'>Collage Image</h3>
             <div className='container'>
                 <div className='main-photo'>
-                    <img src={selectedPhoto.src} alt=''/>
+                        <img src={selectedPhoto.src} alt='#'/>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ea incidunt inventore ipsa modi
+                            nesciunt perspiciatis qui recusandae sapiente similique. Ad consequuntur dolor explicabo
+                            natus
+                            nesciunt possimus praesentium sapiente veniam?</p>
+
+
+
                 </div>
                 <div className='thumbnails'>
                     {photos.map((photo) =>
